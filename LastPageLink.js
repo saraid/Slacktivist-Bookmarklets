@@ -1,8 +1,8 @@
 (function(){
-var footers = document.getElementsByClassName("entry-footer-info");
+var footers = YAHOO.util.Dom.getElementsByClassName("entry-footer-info");
 for (var i = 0; i < footers.length; i++)
 {
-  var comments = footers[i].getElementsByClassName("entry-comments")[0];
+  var comments = YAHOO.util.Dom.getElementsByClassName("entry-comments", "a", footers[i])[0];
   var numComments = parseInt(comments.textContent.match(/\d+/)[0]);
   var lastPage = Math.ceil(numComments / 50);
   var sep = document.createElement("span");
